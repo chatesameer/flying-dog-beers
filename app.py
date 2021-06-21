@@ -9,7 +9,6 @@ import numpy as np
 from dash.dependencies import Input, Output, State
 import numpy as np
 import pandas as pd
-import seaborn as sns
 import matplotlib.pyplot as plt
 import datetime
 import calendar
