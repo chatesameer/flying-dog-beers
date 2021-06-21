@@ -221,7 +221,7 @@ app.layout = html.Div(children=[
     ])
 def func(*args):
     listofargs=[arg for arg in args[:11]]
-    return make_predictions(listofargs, args[11])
+    return tto_customer_prediction(listofargs)
 
 ############ Deploy
 if __name__ == '__main__':
