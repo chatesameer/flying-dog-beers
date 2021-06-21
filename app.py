@@ -110,7 +110,7 @@ def tto_customer_prediction(listOfArgs):
         input_df.drop(labels=['fiveYearTenureName', 'basic_segment_type_name', 'priorYearFilingStatusName', 'filingStatusName', 'priorYearAgiBandName', 'agiBandName', 'priorYearCompleteSku', 'priorYearStartMonth'], axis=1, inplace=True)
 
         # Create a new dataframe that will go as input to Random Forest classifier
-        X_df = pd.DataFrame(columns=feature_cols) 
+        X_df = pd.DataFrame(columns=X.columns) 
         # Assign 0 to all columns in the first row of the new dataframe
         X_df.loc[len(X_df)]=0
         # For loop will run through each of the columns in df and if it has a match in X_df, it will assign the same value to the column in X_df
@@ -185,7 +185,6 @@ app.layout = html.Div(children=[
                 dcc.Dropdown(id='priorYearStartMonth',
                     options=[{'label': i, 'value': i} for i in ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']],
                     value='Jan'),
-
             ], className='two columns'),
             html.Div([
                 html.H3('Predictions'),
